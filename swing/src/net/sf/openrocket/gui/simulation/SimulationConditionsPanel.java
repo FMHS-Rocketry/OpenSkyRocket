@@ -425,15 +425,18 @@ public class SimulationConditionsPanel extends JPanel {
 	
 		
 		
-		JButton restoreDefaults = new JButton(trans.get("simedtdlg.but.resettodefault"));
+		JButton restoreDefaults = new JButton("Gunter, TX");
 		restoreDefaults.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
 				DefaultSimulationOptionFactory f = Application.getInjector().getInstance(DefaultSimulationOptionFactory.class);
-				SimulationOptions defaults = f.getDefault();
-				conditions.copyConditionsFrom(defaults);
+				//SimulationOptions defaults = f.getDefault();
+				//conditions.copyConditionsFrom(defaults);
+				
+				conditions.setWindSpeedAverage(4.12);
+				conditions.setWindSpeedDeviation(1.0);
 				
 			}
 			
