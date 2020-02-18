@@ -2,6 +2,7 @@ package net.sf.openrocket.gui.simulation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -27,10 +28,10 @@ import net.sf.openrocket.startup.Application;
 import net.sf.openrocket.unit.UnitGroup;
 import net.sf.openrocket.util.Chars;
 
+import com.apiCall.Main;
+
 public class SimulationConditionsPanel extends JPanel {
-	private static final Translator trans = Application.getTranslator();
-	
-	
+	private static final Translator trans = Application.getTranslator();	
 	SimulationConditionsPanel(final Simulation simulation) {
 		super(new MigLayout("fill"));
 		

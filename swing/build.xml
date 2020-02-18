@@ -326,6 +326,4 @@ ${nonascii}</fail>
 	Unit tests passed successfully.
 		</echo>
  	</target>
-    
-    
 </project>
