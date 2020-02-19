@@ -438,7 +438,7 @@ public class SimulationConditionsPanel extends JPanel {
 				//SimulationOptions defaults = f.getDefault();
 				//conditions.copyConditionsFrom(defaults);
 				wind.main();
-				conditions.setWindSpeedAverage(wind.s
+				conditions.setWindSpeedAverage(wind.speed);
 				
 			}
 			
