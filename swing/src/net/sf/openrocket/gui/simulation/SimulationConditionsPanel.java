@@ -27,8 +27,11 @@ import net.sf.openrocket.startup.Application;
 import net.sf.openrocket.unit.UnitGroup;
 import net.sf.openrocket.util.Chars;
 
+import com.openWeatherAPI.*;
+
 public class SimulationConditionsPanel extends JPanel {
 	private static final Translator trans = Application.getTranslator();
+	private static final openWeatherAPI wind = new openWeatherAPI();
 	
 	
 	SimulationConditionsPanel(final Simulation simulation) {
@@ -425,15 +428,17 @@ public class SimulationConditionsPanel extends JPanel {
 	
 		
 		
-		JButton restoreDefaults = new JButton(trans.get("simedtdlg.but.resettodefault"));
+		JButton restoreDefaults = new JButton("Gunter, TX");
 		restoreDefaults.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				DefaultSimulationOptionFactory f = Application.getInjector().getInstance(DefaultSimulationOptionFactory.class);
-				SimulationOptions defaults = f.getDefault();
-				conditions.copyConditionsFrom(defaults);
+				//DefaultSimulationOptionFactory f = Application.getInjector().getInstance(DefaultSimulationOptionFactory.class);
+				//SimulationOptions defaults = f.getDefault();
+				//conditions.copyConditionsFrom(defaults);
+				wind.main();
+				conditions.setWindSpeedAverage(wind.speed);
 				
 			}
 			
